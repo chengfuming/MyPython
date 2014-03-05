@@ -122,7 +122,7 @@ def wbSend(url,username,text,app_key):
 
 if __name__ == '__main__':
     from pprint import pprint
-    pprint(wblogin('lizy1630@gmail.com', '***'))
+    pprint(wblogin('lizy1630@gmail.com', '*****'))
     url = 'http://weibo.com/aj/mblog/add?_wv=5&__rnd='
     #url = 'http://service.weibo.com/share/mobile.php?appkey=5786724301&amp;content=utf8'
     wbSend(url,'lizy1630@gmail.com','test',app_key)
