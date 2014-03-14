@@ -75,8 +75,8 @@ if __name__ == '__main__':
 
     #crawl('http://movie.douban.com/top250?format=text')
     url = 'http://www.douban.com/group/jiazhuangqinglv/members?start='
-    endPage=21
-    startPage=16
+    endPage=10
+    startPage=1
     try:
         RESULT = []
         crawl_for_id_num(url,endPage,startPage)
