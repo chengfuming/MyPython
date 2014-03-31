@@ -36,6 +36,17 @@ def crawl_for_id_num(url,endpage,startpage=1):
             print('403 bad req')
         contents =resp.content.decode( 'utf-8', 'ignore' ) 
         soup = BeautifulSoup(contents)
+        
+        for tag in soup.find_all('div', class_='name'):
+            if tag.span.get_text().find('南京')!=-1:
+                print (tag.a['href'])
+            #print(href)
+            #print("crawl page %d user %d" % (i,j))
+            
+            
+        
+        
+        '''
         j=1
         for tag in soup.find_all('a', class_='nbg'):
             href = tag['href'].replace('/group','')
@@ -44,10 +55,11 @@ def crawl_for_id_num(url,endpage,startpage=1):
             
             print('finish user %d, status: %d' % (j,getUsrLoc(href)))
             j+=1
-            
-           
+        '''    
+        
         print('end page %d, result size: %d' % (i,len(RESULT)))
         time.sleep(5)
+        
     print('end crawl process')
         
 
@@ -74,9 +86,9 @@ def output():
 if __name__ == '__main__':
 
     #crawl('http://movie.douban.com/top250?format=text')
-    url = 'http://www.douban.com/group/jiazhuangqinglv/members?start='
-    endPage=10
-    startPage=1
+    url = 'http://www.douban.com/group/loli20/members?start='
+    endPage=270
+    startPage=230
     try:
         RESULT = []
         crawl_for_id_num(url,endPage,startPage)
